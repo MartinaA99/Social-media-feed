@@ -1,0 +1,229 @@
+body {
+    background-color: white;
+    color: black;
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.header-container {
+    text-align: center;
+    padding: 10px;
+}
+
+.layout-container {
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding:25px 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+  
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffbe0b;
+    transition: .4s;
+}
+  
+.slider:before {
+    font-family: FontAwesome;
+    position: absolute;
+    content: "\f185";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input:checked + .slider:before {
+    content: "\f186";
+}
+  
+input:checked + .slider {
+    background-color: #000000;
+}
+  
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+  
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+*{
+   font-family: monospace;, sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+   text-transform: capitalize;
+   transition: all .2s linear;
+}
+
+
+.layout-container .heading{
+  font-size: 40px;
+  margin-bottom: 20px;
+  color:#334;
+}
+
+.layout-container .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap:20px;
+}
+
+.layout-container .box-container .box{
+  background-color: #fff;
+  padding:20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  display: none;
+}
+
+.layout-container .box-container .box:nth-child(1),
+.layout-container .box-container .box:nth-child(2),
+.layout-container .box-container .box:nth-child(3){
+  display: inline-block;
+
+}
+
+.layout-container .box-container .box .image{
+  margin-bottom: 20px;
+  overflow: hidden;
+  height: 250px;
+  border-radius: 5px;
+}
+
+.layout-container .box-container .box .image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.layout-container .box-container .box:hover .image img{
+  transform: scale(1.1);
+}
+
+.layout-container .box-container .box .content h3{
+  font-size: 20px;
+  color:#334;
+}
+
+.layout-container .box-container .box .content p{
+  font-size: 15px;
+  color:#777;
+  line-height: 2;
+  padding:15px 0;
+}
+
+.layout-container .box-container .box .content a{
+  display: inline-block;
+  padding:10px 30px;
+  border:1px solid #334;
+  color:#334;
+  font-size: 16px;
+}
+
+.layout-container .box-container .box .content a:hover{
+  background-color: crimson;
+  border-color: crimson;
+  color:#fff;
+}
+
+.layout-container .box-container .box .content .icons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top:1px solid #334;
+}
+
+.layout-container .box-container .box .content .icons span{
+  font-size: 14px;
+  color:black;
+}
+
+.layout-container .box-container .box .content .icons span {
+  color:black;
+  padding-right: 5px;
+}
+
+#load-more{
+  margin-top: 20px;
+  display: inline-block;
+  padding:13px 30px;
+  border:1px solid #334;
+  color:#334;
+  font-size: 16px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+#load-more:hover{
+  background-color: crimson;
+  border-color: crimson;
+  color:#fff;
+}
+
+@media (max-width:450px){
+
+  .layout-container .heading{
+    font-size: 25px;
+  }
+
+  .layout-container .box-container{
+    grid-template-columns: 1fr;
+  }
+
+  .layout-container .box-container .box .image{
+    height: 200px;
+  }
+
+  .layout-container .box-container .box .content p{
+    font-size: 12px;
+  }
+
+  .layout-container .box-container .box .content .icons span{
+    font-size: 12px;
+  }
+
+}
